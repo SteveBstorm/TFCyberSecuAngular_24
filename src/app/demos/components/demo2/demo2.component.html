@@ -1,0 +1,21 @@
+<h4>Les bindings</h4>
+<p>Valeur de myProp : {{myProp}}</p>
+<!-- Binding One Way : Lecture de propriété -->
+
+<p>myProp = <input type="text" [(ngModel)]="myProp" /></p>
+<!-- NE PAS OUBLIER FormsModule DANS app.module.ts -->
+<!-- Binding Two Ways : Lecture + Ecriture de propriété -->
+
+
+<p><button (click)="methode()" [disabled]="!(myProp == '5')">Click ici</button></p>
+<!-- Event binding : Lie le déclenchement d'une méthode
+     se trouvant dans le TS à un évènement JS -->
+
+<!-- L'attribut disabled peut être lié à une expression booléene -->
+
+<p>
+  <img [src]="url" height="250px">
+</p>
+
+<!-- Attribute binding : lié le contenu d'une propriété
+     à un attribut de balise html -->

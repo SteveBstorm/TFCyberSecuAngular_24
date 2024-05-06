@@ -1,0 +1,18 @@
+<h4>Les pipes</h4>
+
+<p>Valeur de base de myString : {{myString}}</p>
+<p>Uppercase Pipe : {{myString | uppercase}}</p>
+<p>Lowercase Pipe : {{myString | lowercase}}</p>
+<p>Titlecase Pipe : {{myString | titlecase}}</p>
+<hr />
+<p>Valeur de base de myNumber : {{myNumber}}</p>
+<p>Number pipe : {{myNumber | number : '1.1-2'}}</p>
+<p>Currency pipe : {{myNumber | currency : 'JPY'}}</p>
+
+<hr />
+<p>Valeur de myDate : {{myDate}}</p>
+<p>Date Pipe : {{myDate | date : 'EE dd MMMM yy'}}</p>
+
+<hr/>
+<p>Mes sous en Euro : {{mesEuros | currency :'EUR'}}</p>
+<p>Mes sous en Bitcoin : {{mesEuros | eurtobtc}}</p>
