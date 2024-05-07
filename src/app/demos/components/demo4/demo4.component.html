@@ -1,0 +1,63 @@
+<h4>Structural directives</h4>
+<h5>NGIF / IF</h5>
+<button (click)="switchVisible()">Click ici</button>
+<fieldset>
+  <legend>Version Angular 17</legend>
+  @if(isVisible){
+    <div style="border: 1px black solid;">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint reprehenderit doloremque harum cum consequuntur dignissimos inventore delectus? Aspernatur quidem quo dolor, nemo nulla dolorem vitae? Molestias soluta voluptatum quis sequi!
+    </div>
+  }
+  @else {
+    <p>ça c'est vraiment trop fort</p>
+  }
+</fieldset>
+
+
+<hr />
+<fieldset>
+  <legend>Version old school</legend>
+  <div *ngIf="isVisible; else bidule;" style="border: 1px black solid;">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint reprehenderit doloremque harum cum consequuntur dignissimos inventore delectus? Aspernatur quidem quo dolor, nemo nulla dolorem vitae? Molestias soluta voluptatum quis sequi!
+  </div>
+  <ng-template #bidule>
+    <p>ça c'est vraiment trop fort</p>
+  </ng-template>
+</fieldset>
+
+<hr />
+<p>{{monTableau}}</p>
+<ul>
+  <li *ngFor="let s of monTableau; let i = index; let p = odd">
+    <span
+
+          [ngStyle]="monStyle"
+    >{{i}} - {{s}}</span>
+    <!-- [style]="p ? 'background-color : chartreuse;' : ''" -->
+  </li>
+</ul>
+<hr />
+<ul>
+  @for (s of monTableau; track $index;) {
+    <li>{{$index}} - {{s}}</li>
+  }
+</ul>
+
+<hr />
+<input placeholder="faites un choix" [(ngModel)]="choix">
+@switch (choix)
+{
+  @case ("1") {<p>Pomme</p>}
+  @case ("2") {<p>Poire</p>}
+  @case ("3") {<p>IdouIdou</p>}
+  @default {<p>Entrez 1 2 ou 3</p>}
+
+}
+
+<div [ngSwitch]="choix">
+  <p *ngSwitchCase="1">Pomme</p>
+  <p *ngSwitchCase="2">Poire</p>
+  <p *ngSwitchCase="3">Scoubidou</p>
+  <p *ngSwitchDefault>Entrez 1 2 ou 3</p>
+</div>
+

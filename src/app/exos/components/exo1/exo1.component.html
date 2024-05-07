@@ -1,0 +1,6 @@
+<h4>Mon super chrono</h4>
+<p>{{tempsEcoule | totime}}</p>
+
+<button (click)="start()" [disabled]="timer">Start</button> &nbsp;
+<button (click)="pause()" [disabled]="!timer">Pause</button> &nbsp;
+<button (click)="reset()" [disabled]="tempsEcoule == 0">Reset</button> &nbsp;
