@@ -1,4 +1,15 @@
-<a routerLink="demo">Démos</a> |
-<a routerLink="exo">Exercices</a> |
-<a href="#">Lien 3</a> |
-<a href="#">Lien 4</a>
+<ul>
+  @for(l of listeLien; track $index){
+    <li>
+      <span (click)="showChildren($index)">{{l.name}}</span>
+      <ul *ngIf="l.isChildrenVisible">
+        @for(lc of l.children; track $index){
+          <li>
+            <a [routerLink]="lc.url">{{lc.name}}</a>
+          </li>
+        }
+      </ul>
+    </li>
+  }
+
+</ul>

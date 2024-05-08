@@ -1,3 +1,36 @@
 h1{
   color:red;
 }
+
+.header{
+  position : fixed;
+  top : 0;
+  left : 0;
+  width: 100%;
+  background-color: darkgrey;
+  z-index: 100;
+}
+
+.main {
+  // position : fixed;
+  position:absolute;
+  // display : flex;
+  // flex-direction: row;
+  top : 80px;
+  left:0;
+
+}
+
+.menu{
+  left : 0;
+  min-width: 200px;
+  background-color: gray;
+  position: fixed;
+  min-height: 100vh;
+}
+
+.content{
+  padding : 10px;
+  width: 100%;
+  margin-left:200px;
+}

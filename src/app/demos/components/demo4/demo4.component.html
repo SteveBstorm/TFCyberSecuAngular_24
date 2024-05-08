@@ -55,9 +55,9 @@
 }
 
 <div [ngSwitch]="choix">
-  <p *ngSwitchCase="1">Pomme</p>
-  <p *ngSwitchCase="2">Poire</p>
-  <p *ngSwitchCase="3">Scoubidou</p>
+  <p *ngSwitchCase="'1'">Pomme</p>
+  <p *ngSwitchCase="'2'">Poire</p>
+  <p *ngSwitchCase="'3'">Scoubidou</p>
   <p *ngSwitchDefault>Entrez 1 2 ou 3</p>
 </div>
 
