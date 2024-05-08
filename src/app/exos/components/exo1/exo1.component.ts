@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FakeauthService } from '../../../shared/services/fakeauth.service';
 
 @Component({
   selector: 'app-exo1',
@@ -8,6 +9,12 @@ import { Component } from '@angular/core';
 export class Exo1Component {
   tempsEcoule : number = 0
   timer : any
+
+  suisJeConnecte! : boolean
+
+  constructor(private _fakeAuth : FakeauthService){
+    this.suisJeConnecte = _fakeAuth.isConnected
+  }
 
   start() {
     this.timer = setInterval(() => this.tempsEcoule ++, 1000)

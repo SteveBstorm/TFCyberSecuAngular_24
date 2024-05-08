@@ -23,7 +23,7 @@ h1{
 
 .menu{
   left : 0;
-  min-width: 200px;
+  min-width: 250px;
   background-color: gray;
   position: fixed;
   min-height: 100vh;
@@ -31,6 +31,6 @@ h1{
 
 .content{
   padding : 10px;
-  width: 100%;
-  margin-left:200px;
+  width: 100vh;
+  margin-left:250px;
 }

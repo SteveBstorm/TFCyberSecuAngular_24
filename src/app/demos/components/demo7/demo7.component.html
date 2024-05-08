@@ -1,0 +1,35 @@
+<p>demo7 works!</p>
+
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+  <div>
+    E-mail : <input type="email" formControlName="email">
+    @if(fg.controls["email"].invalid && fg.controls["email"].touched){
+      <p style="color:red;">
+        {{fg.controls["email"].errors | json}}
+        L'adresse email est requise et doit être valide
+      </p>
+  }
+  </div>
+  <div>
+    Pseudonyme : <input type="text" formControlName="pseudo">
+  </div>
+  <div>
+    Votre Age : <input type="number" formControlName="age">
+    @if(fg.controls["age"].invalid && fg.controls["age"].touched){
+      <p style="color:red;">
+        {{fg.controls["age"].getError("ageError") }}
+
+      </p>
+  }
+  </div>
+  <div>
+    Genre : <select formControlName="genre">
+      <option>Ne se prononce pas</option>
+      <option value="male">Homme</option>
+      <option value="femelle">Femme</option>
+      <option value="chevre">Chevre</option>
+      <option value="autre">Autre</option>
+    </select>
+  </div>
+  <button type="submit" [disabled]="fg.invalid">Valider</button>
+</form>

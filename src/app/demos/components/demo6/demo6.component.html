@@ -1,0 +1,5 @@
+<p>demo6 works!</p>
+
+<p>Etat de connection : {{suisJeConnecte}}</p>
+<button (click)="meConnecter()" *ngIf="!suisJeConnecte">Connexion</button>
+<button (click)="meDeConnecter()" *ngIf="suisJeConnecte">Déconnexion</button>

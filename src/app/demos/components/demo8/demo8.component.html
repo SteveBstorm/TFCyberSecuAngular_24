@@ -1,0 +1,8 @@
+<p>demo8 works!</p>
+<!-- <button (click)="redirect()">Casse toi</button> -->
+
+<ul>
+  <li *ngFor="let p of listePersonne; let i = index">
+    {{p.nom}} <button (click)="redirect(i)">Detail</button>
+  </li>
+</ul>

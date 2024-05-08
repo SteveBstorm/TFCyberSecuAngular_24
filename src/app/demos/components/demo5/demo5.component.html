@@ -1,0 +1,20 @@
+<p>demo5 works!</p>
+<p>Reponse : {{reponseRecueDeEnfant}}</p>
+
+<fieldset style="border : red solid 3px;
+                 border-radius: 25px;">
+  <legend>Composant Enfant</legend>
+  <app-enfant valeurDuParent="Coucou"
+              [nbrDuParent]="42"
+              (reponseEvent)="receptionReponse($event)"
+              ></app-enfant>
+</fieldset>
+
+<fieldset style="border : red solid 3px;
+                 border-radius: 25px;">
+  <legend>Composant Enfant 2</legend>
+  <app-enfant valeurDuParent="TGCM"
+              [nbrDuParent]="maValeur"
+              (reponseEvent)="receptionReponse($event)"
+  ></app-enfant>
+</fieldset>
