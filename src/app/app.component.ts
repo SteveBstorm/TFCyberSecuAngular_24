@@ -19,6 +19,7 @@ export class AppComponent {
       {url : 'demo/demo6', name : 'Service & Injection'},
       {url : 'demo/demo7', name : 'Formulaires'},
       {url : 'demo/demo8', name : 'Routing'},
+      {url : 'demo/demo9', name : 'ConsoAPI'},
     ]},
     {url : 'exo', name : 'Les exos', children : [
       {url : 'exo/exo1', name : 'Chronomètre'}

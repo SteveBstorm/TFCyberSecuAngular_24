@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FakeauthService } from '../../services/fakeauth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  suisJeConnecte! : boolean
 
+  constructor(private _fakeAuth : FakeauthService){
+    this.suisJeConnecte = _fakeAuth.isConnected
+
+    _fakeAuth.isConnectedSubject.subscribe({
+      next : (data : boolean) =>  { this.suisJeConnecte = data }
+    })
+  }
 }

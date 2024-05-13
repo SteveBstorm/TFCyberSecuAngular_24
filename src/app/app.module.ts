@@ -21,6 +21,8 @@ import { Demo6Component } from './demos/components/demo6/demo6.component';
 import { Demo7Component } from './demos/components/demo7/demo7.component';
 import { Demo8Component } from './demos/components/demo8/demo8.component';
 import { CibleComponent } from './demos/components/demo8/cible/cible.component';
+import { Demo9Component } from './demos/components/demo9/demo9.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,13 +43,15 @@ import { CibleComponent } from './demos/components/demo8/cible/cible.component';
     Demo6Component,
     Demo7Component,
     Demo8Component,
-    CibleComponent
+    CibleComponent,
+    Demo9Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

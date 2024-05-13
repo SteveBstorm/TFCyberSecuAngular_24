@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Link } from '../../models/link.model';
+import { FakeauthService } from '../../services/fakeauth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +8,16 @@ import { Link } from '../../models/link.model';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  suisJeConnecte! : boolean
+
+  constructor(private _fakeAuth : FakeauthService){
+    this.suisJeConnecte = _fakeAuth.isConnected
+
+    _fakeAuth.isConnectedSubject.subscribe({
+      next : (data : boolean) =>  { this.suisJeConnecte = data }
+    })
+  }
+
  @Input() listeLien! : Link[]
   // listeLien : Link[] = [
   //   {url : 'demo', name : 'Les démos', children : [
